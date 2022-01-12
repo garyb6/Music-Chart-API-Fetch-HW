@@ -1,5 +1,5 @@
 import React from "react";
-
+import MusicChartList from '../components/MusicChartList';
 
 
 const MusicChart = () => {
@@ -9,7 +9,11 @@ const MusicChart = () => {
     //     // fetch().then(res => res.json()).then(songs => setSongs(songs))
     // }
 
-    return ("I am a music chart"
+    return (
+        <>
+            <h2>I am a Music Chart</h2>
+            <MusicChartList/>
+        </>
 
         )
 }
