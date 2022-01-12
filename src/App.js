@@ -1,8 +1,13 @@
+import React from 'react';
+import MusicChart from './containers/MusicChart'
 import './App.css';
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div className='MainPage'>
+    <h1>The best CHART HITZ this link has to offer</h1>
+    <MusicChart/>
+    </div>
   );
 }
 
