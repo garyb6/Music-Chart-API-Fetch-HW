@@ -1,18 +1,29 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import MusicChartList from '../components/MusicChartList';
+import SongDetail from "../components/SongDetail";
 
 
 const MusicChart = () => {
+    const [songs, setSongs] = useState([]);
+    const [selectedSong, setSelectedSong] = useState(null);
     
-    // const getMusic = () => {
-    //     console.log("I am a music chart");
-    //     // fetch().then(res => res.json()).then(songs => setSongs(songs))
-    // }
+    
+    useEffect(() => {getMusic()}, []);
+
+    const getMusic = () => {
+        fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20/json')
+        .then(response => response.json())
+        .then(songs => setSongs(songs));
+    }
+
+    const onSongClick = (song) => {
+        setSelectedSong(song)
+    }
 
     return (
         <>
-            <h2>I am a Music Chart</h2>
-            <MusicChartList/>
+            <MusicChartList songs={songs} onSongClick={onSongClick}/>
+            {selectedSong ? <SongDetail song={selectedSong}/> : null}
         </>
 
         )

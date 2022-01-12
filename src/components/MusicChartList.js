@@ -3,14 +3,20 @@ import SongListItem from "./SongListItem";
 
 
 
-const MusicChartList = () => {
+const MusicChartList = ({songs, onSongClick}) => {
 
-    // const Music = function(){
-    // }
+    const songsItems = songs.map(song => <SongListItem song={song} key={song.feed.entry.id.attributes["im:id"]} onSongClick={onSongClick}/>
+    )
+
+    const handleClick = () => {
+        console.log(`clicked on ${song}`);
+    }
     return(
         <>
-        <h3>I am a MusicChartList</h3>
-        <SongListItem/>
+        <ul>
+        <h1>Hello Pet</h1>
+        {songsItems}
+        </ul>
         </>
     )
 };

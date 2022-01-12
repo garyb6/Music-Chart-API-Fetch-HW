@@ -2,11 +2,14 @@ import React from 'react';
 
 
 
-const SongListItem = () => {
+const SongListItem = ({song, onSongClick}) => {
 
+    const handleClick = () => {
+        onSongClick(song)
+    }
 
     return (
-        <h4>I am a SongListItem</h4>
+        <li onClick={handleClick}>{song.title}</li>
 
     )
 }
