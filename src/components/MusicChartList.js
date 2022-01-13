@@ -3,21 +3,20 @@ import SongListItem from "./SongListItem";
 
 
 
-const MusicChartList = ({songs, onSongClick}) => {
+const MusicChartList = ({songs}) => {
 
-    // const songsItems = songs['feed']['entry'].map((song, index, onSongClick) => {
-        // return <SongListItem song= {song['title']['label']} key={index['id']['attributes']['im:id']} onSongClick={onSongClick}/>
-    // });
+    const songsItems = songs.map((song, index) => {
+        return <SongListItem songName= {song['im:name']} key={index} artist={song["im:artist"]} image={song["im:image"][0].label} rank={index} />
+    });
 
 
-    const handleClick = () => {
-        console.log(`clicked on ${songs}`);
-    }
+    // const handleClick = () => {
+    //     console.log(`clicked on ${songs}`);
+    // }
     return(
         <>
         <ul>
-        <h1>Hello World</h1>
-        {/* {songsItems} */}
+        {songsItems}
         </ul>
         </>
     )

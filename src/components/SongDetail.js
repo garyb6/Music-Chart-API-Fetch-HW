@@ -1,17 +1,18 @@
-import React from 'react';
-import SongListItem from './SongListItem';
+// import React from 'react';
+// import SongListItem from './SongListItem';
 
 
 
-const SongDetail = ({song}) => {
+// const SongDetail = ({songName, artist, rank, image}) => {
+//     return (
+//         <div className='song-item'>
+//             <h3>{rank + 1}</h3>
+//             <h3>{songName.label}</h3>
+//             <h4>{artist.label}</h4>
+//             <img src={image}></img>
+//         </div>
+//     )
+// }
 
-    return(
-    <>
-        <h4>Song Deets</h4>
-        <h5>{song.feed.entry[0]}</h5>
-    </>
-    )
-}
 
-
-export default SongDetail;
+// export default SongDetail;

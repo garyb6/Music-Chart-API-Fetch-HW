@@ -2,16 +2,14 @@ import React from 'react';
 
 
 
-const SongListItem = ({song, onSongClick}) => {
-
-    const handleClick = () => {
-        onSongClick(song)
-    }
-
+const SongListItem = ({songName, artist, rank, image}) => {
     return (
-        <li onClick={handleClick}>{song.title}</li>
+        <div className='song-item'>
+            <h3>{rank + 1}</h3>
+            <h3>{songName.label}</h3>
+            <h4>{artist.label}</h4>
+            <img src={image}></img>
+        </div>
+    )}
 
-    )
-}
-
-export default SongListItem;
+export default SongListItem
