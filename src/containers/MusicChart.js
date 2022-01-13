@@ -8,7 +8,7 @@ const MusicChart = () => {
     const [selectedSong, setSelectedSong] = useState(null);
     
     
-    useEffect(() => {getMusic()}, []);
+    // useEffect(() => {getMusic()}, []);
 
     const getMusic = () => {
         fetch('https://itunes.apple.com/gb/rss/topsongs/limit=20/json')
@@ -16,6 +16,7 @@ const MusicChart = () => {
         .then(songs => setSongs(songs));
     }
 
+    // ['feed']['entry']['im:name']
     const onSongClick = (song) => {
         setSelectedSong(song)
     }

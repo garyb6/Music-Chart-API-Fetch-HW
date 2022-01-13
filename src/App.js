@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className='MainPage'>
-    <h1>The best CHART HITZ this link has to offer</h1>
+    <h1>CHART HITZ</h1>
     <MusicChart/>
     </div>
   );
